@@ -37,6 +37,7 @@ public class BaseTest {
 			ReportUtils.skip("Testcase skipped");
 		}
 	}
+	
 	@AfterSuite
 	public void stopExtentReport() {
 		ReportUtils.close();

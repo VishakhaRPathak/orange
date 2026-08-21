@@ -5,7 +5,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.model.Media;
 
 public final class ScreenshotUtils {
 

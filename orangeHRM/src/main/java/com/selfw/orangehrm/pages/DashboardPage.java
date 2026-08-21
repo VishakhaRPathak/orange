@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import com.selfw.orangehrm.utility.WaitUtils;
 
 public class DashboardPage {
-	private By header = By.xpath("//div[contains(@class, 'oxd-topbar-header-title')]");
+	private By header = By.xpath("//h6[contains(@class, 'oxd-topbar-header-breadcrumb-module')]");
 	private WebDriver driver;
 	public DashboardPage(WebDriver driver) {
 		this.driver = driver;

@@ -2,6 +2,7 @@ package com.selfw.orangehrm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.selfw.orangehrm.utility.WaitUtils;
 
@@ -11,6 +12,7 @@ public class LoginPage {
 	By txtUsername = By.name("username");
 	By txtPasswordField = By.name("password");
 	By btnLogin = By.xpath("//button[normalize-space()='Login']");
+	By alertText = By.cssSelector("p.oxd-alert-content-text");
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -24,4 +26,15 @@ public class LoginPage {
 		return new DashboardPage(driver);
 	}
 	
+	public LoginPage loginInvalid(String username, String password) {
+		WaitUtils.waitForElementClickable(driver,txtUsername).sendKeys(username);
+		driver.findElement(txtPasswordField).sendKeys(password);
+		WaitUtils.waitForElementClickable(driver, btnLogin).click();
+		
+		return this;
+//		return driver.findElement(alertText).getText();
+	}
+	public String getAlertText() {
+		return WaitUtils.waitForElementVisible(driver, alertText).getText();
+	}
 }
